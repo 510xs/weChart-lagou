@@ -1,0 +1,51 @@
+/**index.wxss**/
+/* 首页 */
+
+.index-title{
+  width: 100%;
+  background-color: #2BC998;
+  text-align: center;
+  overflow: hidden;
+}
+.index-title image{
+  height: 40px;
+  width: 110px;
+  margin: 0 auto;
+}
+.search-btn{
+  width: 90%;
+  height: 40px;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  font-size: .7rem;
+  color: #a9a9a9;
+  line-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-search{
+  width: 15px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+/* index-line */
+.index-line-box{
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .75rem;
+}
+.index-line{
+  width: 100rpx;
+  height: 1px;
+  border-top: .5rpx solid #a9a9a9;
+}
+
+

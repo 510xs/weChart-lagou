@@ -1,0 +1,109 @@
+<!--pages/detail/detail.wxml-->
+<view class='detail'>
+<!-- 职位详情 -->
+  <view class='position-details'>
+    <view class='detail-name'>{{detail.positionName}}</view>
+    <view class='detail-docs'>
+      <text class='detail-salary'>{{detail.salary}}</text>
+      <text>/</text>
+      <text>{{detail.city}}</text>
+      <text>/</text>
+      <text>4年</text>
+      <text>/</text>
+      <text>本科</text>
+    </view>
+    <view class='position-temptation'>职位诱惑：美女如云</view>
+  </view>
+<!-- 企业信息 -->
+  <view class='company-info'>
+    <view class='company-about'>
+      <view class='company-name'>{{detail.companyName}}</view>
+      <view class='company-info-list'>
+        <text>D轮及以上</text>
+        <text>/</text>
+        <text>150-500人</text>
+        <text>/</text>
+        <text>移动互联网</text>
+      </view>
+      <view class='identification'>已认证</view>
+    </view>
+    <view class='company-logo'>
+      <image src="{{'http://www.lgstatic.com/'+detail.companyLogo}}"></image>
+    </view>
+  </view>
+<!-- 职位描述 -->
+  <view class='position-describe'>
+    <view class='position-describe-title'>职位描述</view>
+    <view class='position-describe-content'>
+      <view>任职要求</view>
+      <view>1.全日制统招本科以上学历，大公司背景，5年以上相关工作经验。</view>
+      <view>2.熟练掌握Vue前端框架，并使用它们至少独立承担过一个项目的开发实施。</view>
+      <view>3.熟悉W3C标准，对表现与数据分离、Web语义化等有深刻理解，具备大中型电商系统或移动应用的前端架构的规划经验和开发经验。</view>
+      <view>4.熟练掌握HTML、CSS、JS、AJAX，对HTML5、CSS3新特性熟练运用，对页面自适应有实际应用经验。</view>
+      <view>岗位职责</view>
+      <view>1. 负责信息管理部相关业务系统的用户访问前端的软件开发。</view>
+      <view>2. 负责进行项目前端项目的搭建和代码开发工作，并负责前端项目的打包和部署发布。</view>
+      <view>3. 负责信息管理部相关业务系统的前端页面（主要为 H5页面）的设计开发。</view>
+      <view>4. 对项目外包的前端开发人员进行开发安排、代码质量管理等工作。</view>
+      <view>5. 负责与产品经理和UI设计师的对接，开发实现产品的用户交互设计。</view>
+    </view>
+  </view>
+<!-- 职位发布者 -->
+  <view class='position-release'>
+    <view class='position-release-title'>职位发布者</view>
+    <view class='release-info'>
+      <view class='release-logo'>
+        <image src='http://www.lgstatic.com/image1/M00/00/1E/Cgo8PFTUWGiARtN0AAA51Cvyy7Y978.png'></image>
+      </view>
+      <view class='release-info-list'>
+        <view class='release-name'>
+          <text>张三</text>
+          <text>招聘专员</text>
+        </view>
+        <view class='release-time'>
+          最近活跃：刚刚
+        </view>
+      </view>
+    </view>
+    <view class='release-sketch'>
+      <text>简历处理神速</text>
+      <text>很少会聊天消息</text>
+      <text>早上活跃</text>
+    </view>
+  </view>
+<!-- 工作地址 -->
+  <view class='position-city'>
+    <view class='position-city-title'>工作地址</view>
+    <view class='city-content'>
+      <view class='city-info-list'>
+        <view>成都市武侯区</view>
+        <view>成都市中心</view>
+      </view>
+      <view class='city-right-icon'>></view>
+    </view>
+  </view>
+<!-- 相似职位 -->
+  <view class='position-similar'>
+    <view class='position-similar-title'>相似职位</view>
+    <view class='position-similar-list'>
+      <similarPositions 
+          wx:if="{{similarInfo?true:false}}"
+          wx:for="{{similarInfo}}"
+          wx-item="{{item}}"
+          item="{{item}}"
+          data-condition="{{item.positionID}}"
+          data-jobsID="{{item.jobsID}}"
+          bindtap='positionDetail'
+          wx:key="{{item.jobsID}}" />
+    </view>
+    <view class='not-similar' wx:if="{{similarInfo[0].positionName?false:true}}">暂无相似职位~~</view>
+  </view>
+<!-- 投递简历 -->
+  <view class='sending-resume'>
+    <view class='sending-box'>
+      <view class='resume-about'>分享</view>
+      <view class='resume-about'>收藏</view>
+      <view class='resume'>投递简历</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,37 @@
+<!--pages/components/similarPositions/similarPositions.wxml-->
+<similarPosition>
+  <view class='similar-item'>
+    <view class='similar-top'>
+      <view class='similar-item-name'>
+        <text>{{item.positionName}}</text>
+        <text class='similar-position-salary'>{{item.salary}}</text>
+      </view>
+      <view class='similar-item-about'>
+        <view class='similar-item-city'>
+            <text>{{item.city}}</text>
+            <text>/</text>
+            <text>{{item.workExperience}}</text>
+            <text>/</text>
+            <text>{{item.education}}</text>
+        </view>
+        <view>05月10日</view>
+      </view>
+    </view>
+    <!--  -->
+    <view class='similar-bottom'>
+      <view class='similar-company-logo'>
+        <image src='{{"http://www.lgstatic.com/"+item.companyLogo}}'></image>
+      </view>
+      <view class='similar-company-info'>
+        <view class='similar-company-name'>{{item.companyName}}</view>
+        <view class='similar-item-company'>
+            <text>A轮</text>
+            <text>/</text>
+            <text>2000人以上</text>
+            <text>/</text>
+            <text>移动互联网</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</similarPosition>

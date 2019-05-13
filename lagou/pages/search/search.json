@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "component-position": "../components/position/position"
+  },
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "搜索",
+  "backgroundTextStyle": "light"
+}

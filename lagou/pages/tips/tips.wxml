@@ -1,0 +1,36 @@
+<!--pages/tips/tips.wxml-->
+<view class='tips'>
+  <view class='tips-title'>
+      <image src='../public/images/icon/info.jpg'></image>
+      <view class='tips-title-txt'>以下是前100名的招聘官，榜单实时更新<text>如何上榜?</text></view>
+  </view>
+  <!-- 排行列表 -->
+  <view class='tips-list-box'>
+  <view class='tips-border' wx:for="{{tipsList}}" wx:key="{{index+1}}">
+    <view class='tips-list'>
+      <view class='tips-left-img {{"num-img"+index+1}}'>{{index+1}}</view>
+      <view class='tips-item'>
+          <view class='tips-info'>
+            <view class='tips-compay-ifno'>
+                <view class='tips-compay-name'>{{item.companyShortName}}</view>
+                <view class='tips-company-about'>{{item.city}}/{{item.industryField}}/{{item.onlineJobCount}}个在招职位</view>
+            </view>
+            <image src='{{item.companyLogo}}'></image>
+          </view>
+          <view class='tips-user-info'>
+            <image class='hr-img' src='{{item.hrPortrait}}'></image>
+            <view class='hr-name'>{{item.hrName}}·{{item.hrPositionName}}</view>
+            <view class='exposure'>{{item.exposure}}曝光度</view>
+          </view>
+      </view>
+    </view>
+  </view>
+  <view class='end-tips'>
+    <view wx:if="{{endTips?true:false}}" class='tips-loading'>加载中</view>
+    <view wx:if="{{(tipsList.length>=100)?true:false}}" class='tips-loading'>没有更多数据了~~</view>
+  </view>
+  </view>
+
+</view>
+
+

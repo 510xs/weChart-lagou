@@ -1,0 +1,60 @@
+/* pages/components/similarPositions/similarPositions.wxss */
+.similar-item{
+  border-top: 1rpx solid #ccc;
+  overflow: hidden;
+}
+.similar-top{
+  margin-top: 15px;
+}
+.similar-item-name{
+  display: flex;
+  justify-content: space-between;
+  line-height: 25px;
+}
+.similar-position-salary{
+  color: #fb6b46;
+}
+.similar-item-about{
+  display: flex;
+  justify-content: space-between;
+  line-height: 30px;
+  color: #666;
+  font-size: .8rem;
+  font-weight: 300;
+}
+.similar-item-city{
+  display: flex;
+}
+.similar-item-city text{
+  margin: 0 3rpx;
+}
+/*  */
+.similar-bottom{
+  display: flex;
+  margin: 20px 0;
+}
+.similar-company-logo{
+  min-width: 50px;
+  max-width: 50px;
+  height: 50px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.similar-company-logo image{
+  width: 100%;
+  height: 100%;
+}
+.similar-company-name{
+  font-size: .87rem;
+  font-weight: 300;
+  color: #333;
+  line-height: 30px;
+}
+.similar-item-company{
+  font-size: .75rem;
+  color: #666;
+  line-height: 30px;
+}
+.similar-item-company text{
+  margin: 0 3rpx;
+}

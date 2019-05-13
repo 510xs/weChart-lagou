@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view>
+<!-- 未登录 -->
+ <my-component 
+      my-property="example"
+      wx:if="{{isShow?false:true}}"
+      bind:myevent="changeIsShow"/>
+  <!-- 已登录 -->
+  <view wx:if="{{isShow?true:false}}">
+    <view class='index-title'>
+        <image mode='aspectFill' src='../public/images/logo.jpg'></image>
+        <view class='search-btn' bindtouchstart='onSearch'><icon type="search" size='16' class='icon-search' />搜索公司/职位</view>
+    </view>
+    <view class='index-line-box'>
+        <text class='index-line'></text>
+        <view>为您推荐好的职位</view>
+        <text class='index-line'></text>
+    </view>
+    <view class='position-list'>
+      <component-position
+        wx:for="{{positionList}}" 
+        wx-item="{{item}}"
+        item="{{item}}"
+        wx:key="{{item.jobsID}}"
+        data-condition="{{item.positionID}}"
+        data-jobsID="{{item.jobsID}}"
+        bindtap='positionDetail'/>
+    </view>
+    <view class='end-tips'>
+    <view wx:if="{{endTips?true:false}}" class='tips-loading'>加载中</view>
+    <view wx:if="{{(positionList.length>=1900)?true:false}}" class='tips-loading'>没有更多数据了~~</view>
+  </view>
+  </view>
+  
+</view>

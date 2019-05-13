@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/tips/tips",
+    "pages/center/center",
+    "pages/search/search",
+    "pages/detail/detail",
+    "pages/components/login-other/login-other",
+    "pages/components/login-tel/login-tel",
+    "pages/components/login-wx/login-wx",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2BC998",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#2BC998",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "职位",
+        "iconPath": "pages/public/images/icon/position.png",
+        "selectedIconPath": "pages/public/images/icon/position1.png"
+      },
+      {
+        "pagePath": "pages/tips/tips",
+        "text": "排行榜",
+        "iconPath": "pages/public/images/icon/tips.png",
+        "selectedIconPath": "pages/public/images/icon/tips1.png"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "text": "我的",
+        "iconPath": "pages/public/images/icon/center.png",
+        "selectedIconPath": "pages/public/images/icon/center1.png"
+      }
+    ]
+  }
+}

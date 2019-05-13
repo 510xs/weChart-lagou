@@ -1,0 +1,199 @@
+<!--pages/center/center.wxml-->
+<view class='center'>
+<!-- 未登录 -->
+  <view
+    class='login-box' 
+    bindtouchstart='loginModule'
+    wx:if="{{isUser?false:true}}"
+    data-isshow="{{isBtnLogin?false:true}}">
+    <view class='no-login'>
+      <view class='no-login-left'>
+        <view class='no-login-btn'>点击登录</view>
+        <view class='no-login-btn-txt'>登录后查看更多信息</view>
+      </view>
+      <view class='no-login-logo'><image src='../public/images/icon/user.png'></image>
+      </view>
+    </view>
+  </view>
+  <!-- 已登录 -->
+  <view
+    class='login-box' 
+    bindtouchstart='loginModule'
+    wx:if="{{isUser?true:false}}"
+    data-isshow="{{isBtnLogin?false:true}}">
+    <view class='no-login'>
+      <view class='no-login-left'>
+        <view class='no-login-btn'>{{userInfo.userName}}</view>
+        <view class='no-login-btn-txt'>{{userInfo.description}}</view>
+      </view>
+      <view class='no-login-logo'><image src='{{userInfo.userImg}}'></image>
+      </view>
+    </view>
+  </view>
+
+  <view class='center-content'>
+    <view
+      class='center-item'
+      wx:for="{{aboutArr}}"
+      wx-item="{{item}}"
+      wx:key="{item.txt}}">
+        <view>
+          <view>
+          <image class='center-img' src='{{item.img}}'></image>
+          <text class='center-txt'>{{item.txt}}</text>
+        </view>
+        <image class='center-icon' src='../public/images/icon/rightback.png'></image>
+        </view>
+    </view> 
+  </view>
+
+  <view class='change-recruit'>切换至我要招人</view>
+  <view class='login-out' wx:if="{{isUser?true:false}}" bindtouchstart='loginOut'>退出登录</view>
+</view>
+<view class='login-module' wx:if="{{isBtnLogin?false:true}}">
+  <view class='login-module-box'>
+    <view 
+      class='login-module-close'  
+      bindtouchstart='loginModule' 
+      data-isshow="{{isBtnLogin?false:true}}">
+      <image src='../public/images/icon/cha.png'></image>
+    </view>
+    <view class='login-module-title'>登录或注册拉勾</view>
+    <view
+      class='login-module-wx login-mode'
+      data-page="wx"
+      bindtouchstart='loginPage'>微信账号快速登录</view>
+    <view 
+      class='login-module-tel login-mode'
+      data-page="tel"
+      bindtouchstart='loginPage'>手机号注册/登录</view>
+    <view
+      class='login-module-other'
+      data-page="other"
+      bindtouchstart='loginPage'>其他方式登录</view>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+      <view class='{{(conditionType == 2)?"show-position":"hidde-position"}}'>
+      <scroll-view class='scroll-view' scroll-y style="height: 350px;">
+          <view class='show-position-item'>
+              <view class='show-position-title'>月薪范围</view>
+              <view class='show-position-list'>
+                  <view 
+                    wx-item="{{item}}"
+                    wx:key="{{item}}"
+                    data-item="{{item}}"
+                    bindtouchstart='getSalary'
+                    wx:for="{{salary}}">{{item}}</view>
+              </view>
+          </view>
+          <view class='show-position-item'>
+            <view class='show-position-title'>发布时间</view>
+            <view class='show-position-list'>
+                <view 
+                  wx-item="{{item}}"
+                  wx:key="{{item}}"
+                  data-item="{{item}}"
+                  bindtouchstart='getSalary'
+                  wx:for="{{fullTime}}">{{item}}</view>
+            </view>
+          </view>
+          <view class='show-position-item'>
+            <view class='show-position-title'>工作经验</view>
+            <view class='show-position-list'>
+                <view 
+                  wx-item="{{item}}"
+                  wx:key="{{item}}"
+                  data-item="{{item}}"
+                  bindtouchstart='getSalary'
+                  wx:for="{{workExp}}">{{item}}</view>
+            </view>
+          </view>
+          <view class='show-position-item'>
+            <view class='show-position-title'>学历要求</view>
+            <view class='show-position-list'>
+                <view 
+                  wx-item="{{item}}"
+                  wx:key="{{item}}"
+                  data-item="{{item}}"
+                  bindtouchstart='getSalary'
+                  wx:for="{{edution}}">{{item}}</view>
+            </view>
+          </view>
+          <view class='show-position-item'>
+            <view class='show-position-title'>工作性质</view>
+            <view class='show-position-list'>
+                <view 
+                  wx-item="{{item}}"
+                  wx:key="{{item}}"
+                  data-item="{{item}}"
+                  bindtouchstart='getSalary'
+                  wx:for="{{nature}}">{{item}}</view>
+            </view>
+          </view>
+      </scroll-view>
+        <view class='sort-ok'>确定</view>
+      </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<view class='search-sort-box'>
+        <view
+        bindtouchstart='showCondition'
+        data-type="1"
+        class='search-sort-btn'>位置<image src='../public/images/icon/back.png'></image></view>
+        <view 
+        bindtouchstart='showCondition'
+        data-type="2"
+        class='search-sort-btn'>职位<image src='../public/images/icon/back.png'></image></view>
+        <view 
+        bindtouchstart='showCondition'
+        data-type="3"
+        class='search-sort-btn'>公司<image src='../public/images/icon/back.png'></image></view>
+        <view 
+        bindtouchstart='showCondition'
+        data-type="4"
+        class='search-sort-btn'>排序<image src='../public/images/icon/back.png'></image></view>
+      </view>
+
+
+
+
+
+
+
+
+ -->

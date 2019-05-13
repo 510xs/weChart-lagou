@@ -1,0 +1,23 @@
+<!--pages/components/position/position.wxml-->
+<position>
+  <view class='position-item'>
+        <view class='company-logo'><image src='{{"//www.lgstatic.com/"+item.companyLogo}}'></image></view>
+        <view class='position-info'>
+          <view class='position-middle'>
+            <view class='position-name'>{{item.positionName}}</view>
+            <view class='company-name'>{{item.companyName}}</view>
+            <view class='docs'>
+                <text>{{item.city}}</text>
+                <!-- item.workExperience?item.workExperience: -->
+                <text>{{"1-3年"}}</text>
+                <!-- item.education -->
+                <text>{{"本科"}}</text>
+            </view>
+          </view>
+          <view class='position-item-right'>
+            <text class='position-salary'>{{item.salary}}</text>
+            <text class='position-time'>{{item.createTime}}</text>
+          </view>
+        </view>
+      </view>
+</position>

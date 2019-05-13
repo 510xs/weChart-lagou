@@ -1,0 +1,161 @@
+/* pages/center/center.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.center{
+  background-color: #F8F9F9;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  position: fixed;
+}
+
+.login-box{
+  background-color: #fff;
+}
+.no-login{
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.no-login-btn{
+  font-size: 1.2rem;
+  line-height: 40px;
+}
+.no-login-btn-txt{
+  font-size: .9rem;
+  font-weight: 300;
+  color: #666;
+}
+
+.no-login-logo{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.no-login-logo image{
+  width: 100%;
+  height: 100%;
+}
+
+/* --- --- */
+.center-content{
+  margin-top: 8px;
+  width: 100%;
+  background-color: #fff;
+}
+.center-item{
+  border-bottom: 1rpx solid #E9EAEC;
+}
+.center-item:last-of-type{
+  border: 0;
+}
+.center-item>view{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+.center-item>view>view{
+  display: flex;
+  align-items: center;
+}
+
+.center-txt{
+  line-height: 55px;
+  font-size: .87rem;
+  font-weight: 300;
+  margin-left: 15px;
+}
+
+.center-img{
+  width: 28px;
+  height: 28px;
+}
+
+.center-icon{
+  width: 12px;
+  height: 12px;
+}
+
+.change-recruit{
+  line-height: 45px;
+  background-color: #fff;
+  font-size: .9rem;
+  text-align: center;
+  margin-top: 8px;
+}
+
+
+.login-out{
+  text-align: center;
+  line-height: 60px;
+  color: #B6B6B6;
+  font-size: .87rem;
+}
+
+/* 登录对话框 */
+.login-module{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  position: fixed;
+  z-index: 999;
+}
+.login-module-box{
+  width: 76%;
+  height: 240px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  margin-top: -120px;
+  left: 12%;
+  border-radius: 3px;
+}
+.login-module-close{
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.login-module-close image{
+  width: 100%;
+  height: 100%;
+}
+.login-module-title{
+  line-height: 67px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.login-mode{
+  width: 85%;
+  height: 40px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: .9rem;
+  line-height: 40px;
+  border-radius: 3px;
+}
+.login-module-wx{
+  background-color: #19AC18;
+  color: #fff;
+}
+.login-module-tel{
+  border: 1rpx solid #666;
+  background-color: #F7F7F7;
+  margin-top: 15px;
+}
+.login-module-other{
+  line-height: 70px;
+  text-align: center;
+  font-size: .78rem;
+  color: #7E7E7E;
+}

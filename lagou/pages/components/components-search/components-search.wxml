@@ -1,0 +1,25 @@
+<!--pages/components/components-search/components-search.wxml-->
+<!-- 未登录状态下的首页第一页 -->
+<components-search>
+  <view class='not-login-title'>
+    <text class='not-title-line'></text>
+    <text class='not-login-title-txt'>你期望的工作</text>
+    <text class='not-title-line'></text>
+  </view>
+  <view class='not-login-search'>
+    <view class='not-login-city'>成都</view>
+    <input placeholder="输入职位关键词，如：产品" value='{{searchValue}}' bindinput='getSearchValue'/>
+  </view>
+  <view class='not-login-searchlist' >
+    <view
+        class='{{(searchValue == item)?"not-active":"not-click"}}' 
+        bindtap='getThisValue'
+        data-item="{{item}}"
+        wx:for="{{searchArr}}" 
+        wx-item="{{item}}" 
+        wx:key="{{item}}">{{item}}</view>
+  </view>
+  <view class='not-go-earch {{searchValue?"not-active":" "}}' bindtap='search'>我选好了，去找工作</view>
+
+
+</components-search>

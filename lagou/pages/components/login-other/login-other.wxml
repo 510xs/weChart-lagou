@@ -1,0 +1,26 @@
+<!--pages/components/login-other/login-other.wxml-->
+<view class='login-other-box'>
+  <view class='login-title'>登录拉勾</view>
+  <view class='login-info'>
+      <view class='login-row login-border'>
+        <input
+          value='{{userName}}'
+          data-type='1'
+          bindinput='changeLoginInfo'
+          placeholder-class='input-color'
+          placeholder='请输入已验证的手机号或邮箱'></input>
+      </view>
+      <view class='login-row login-border'>
+        <input
+          type='password'
+          value='{{userPassWord}}'
+          data-type='2'
+          bindinput='changeLoginInfo'
+          placeholder-class='input-color' 
+          placeholder='请输入密码'></input>
+      </view>
+  </view>
+  <view class='login' bindtap='login'>登录</view>
+
+  <view class='login-type'>手机号登录</view>
+</view>

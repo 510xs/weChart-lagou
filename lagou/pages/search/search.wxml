@@ -1,0 +1,150 @@
+<!--pages/search/search.wxml-->
+<view class='search'>
+  <view class='search-title'>
+    <view class='search-title-content'>
+      <view class='search-box'>
+        <view class='search-city' wx:if="{{searchList?false:true}}">
+          <text>成都</text><image src='../public/images/icon/back.png'></image>
+        </view>
+        <view class='search-input-box {{searchList?"haveInfo":""}}'>
+          <icon class='search-input-icon' type='search' size='16'></icon>
+          <input
+              value='{{search}}'
+              bindfocus='changeValue'
+              bindinput='getSearchValue'></input>
+        </view>
+        <view
+          class='search-input-btn'
+           wx:if="{{searchList?false:true}}"
+          data-type='{{search?1:2}}'
+          bindtouchstart='getSearchList'>{{search?"确定":"取消"}}</view>
+      </view>
+    </view>
+
+    <view class='similar-list' wx:if="{{similarList?true:false}}">
+        <view>
+          <view 
+            class='similar-item'
+            data-item="{{item}}"
+            bindtouchstart='setSearchValue'
+            wx:for="{{similarList}}"
+            wx:key="{{item}}"
+            wx-item="{{item}}">
+              <icon class='search-input-icon' type='search' size='16'></icon>
+              <text>{{item.similarName}}</text>
+          </view>
+        </view>
+    </view>
+  </view>
+
+  <!-- 未搜索状态 -->
+  <view class='no-search' wx:if="{{searchList?false:true}}">
+      <view class='no-saerch-title'>猜你要搜</view>
+      <view class='no-search-box'>
+        <view 
+          class='no-search-item'
+          data-item="{{item}}"
+          bindtouchstart='setSearchValue'
+          wx:for="{{noSearchArr}}"
+          wx-item="{{item}}"
+          wx:key="{{item}}">{{item}}</view>
+      </view>
+  </view>
+
+  <!-- 搜索后返回的数据 -->
+  <view class='on-search' wx:if="{{searchList?true:false}}">
+       <view class='search-sort-box'>
+        <view
+        bindtouchstart='showCondition'
+        data-type="1"
+        class='search-sort-btn'>位置<image src='../public/images/icon/back.png'></image></view>
+        <view 
+        bindtouchstart='showCondition'
+        data-type="2"
+        class='search-sort-btn'>职位<image src='../public/images/icon/back.png'></image></view>
+        <view 
+        bindtouchstart='showCondition'
+        data-type="3"
+        class='search-sort-btn'>公司<image src='../public/images/icon/back.png'></image></view>
+        <view 
+        bindtouchstart='showCondition'
+        data-type="4"
+        class='search-sort-btn'>排序<image src='../public/images/icon/back.png'></image></view>
+      </view>
+      <!-- 职位 -->
+      <view class='search-nav'>
+        <view class='search-nav-box'>
+          <view class='{{(conditionType == 2)?"show-position":"hidde-position"}}'>
+            <scroll-view class='scroll-view' scroll-y style="height: 350px;">
+            <view class='show-position-item'>
+                <view class='show-position-title'>月薪范围</view>
+                <view class='show-position-list'>
+                    <view 
+                      wx-item="{{item}}"
+                      wx:key="{{item}}"
+                      data-item="{{item}}"
+                      bindtouchstart='getSalary'
+                      wx:for="{{salary}}">{{item}}</view>
+                </view>
+            </view>
+            <view class='show-position-item'>
+              <view class='show-position-title'>发布时间</view>
+              <view class='show-position-list'>
+                  <view 
+                    wx-item="{{item}}"
+                    wx:key="{{item}}"
+                    data-item="{{item}}"
+                    bindtouchstart='getSalary'
+                    wx:for="{{fullTime}}">{{item}}</view>
+              </view>
+            </view>
+            <view class='show-position-item'>
+              <view class='show-position-title'>工作经验</view>
+              <view class='show-position-list'>
+                  <view 
+                    wx-item="{{item}}"
+                    wx:key="{{item}}"
+                    data-item="{{item}}"
+                    bindtouchstart='getSalary'
+                    wx:for="{{workExp}}">{{item}}</view>
+              </view>
+            </view>
+            <view class='show-position-item'>
+              <view class='show-position-title'>学历要求</view>
+              <view class='show-position-list'>
+                  <view 
+                    wx-item="{{item}}"
+                    wx:key="{{item}}"
+                    data-item="{{item}}"
+                    bindtouchstart='getSalary'
+                    wx:for="{{edution}}">{{item}}</view>
+              </view>
+            </view>
+            <view class='show-position-item'>
+              <view class='show-position-title'>工作性质</view>
+              <view class='show-position-list'>
+                  <view 
+                    wx-item="{{item}}"
+                    wx:key="{{item}}"
+                    data-item="{{item}}"
+                    bindtouchstart='getSalary'
+                    wx:for="{{nature}}">{{item}}</view>
+              </view>
+            </view>
+            </scroll-view>
+            <view class='sort-ok'>确定</view>
+           </view>
+        </view>
+      </view>
+   
+    <component-position
+        wx:for="{{searchList}}" 
+        wx-item="{{item}}"
+        item="{{item}}"
+        wx:key="{{item.jobsID}}"
+        data-condition="{{item.positionID}}"
+        data-jobsID="{{item.jobsID}}"
+        bindtap='positionDetail'/>
+  </view>
+
+</view>

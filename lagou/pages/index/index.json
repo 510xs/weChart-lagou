@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "my-component": "/pages/components/components-search/components-search",
+    "component-position":"../components/position/position",
+    "city":"../components/city/city"
+  }
+}
