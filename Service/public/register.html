@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <script src="./javascripts/jquery-3.3.1.min.js"></script>
+    <script src="./javascripts/request.js"></script>
+    <script src="./javascripts/md5.js"></script>
+</head>
+<body>
+    <div>
+        <div>用户名：<input type="text" id="userName" /></div>
+        <div>密码：<input type="text" id="userPwd" /></div>
+        <dvi><button id="register">提交</button></dvi>
+    </div>
+</body>
+    <script>
+        $(function(){
+
+            //使用正则验证用户名与密码
+            let regular = {
+                user:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{4,12}/,
+                pwd:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{6,16}/
+            };
+
+            $("#register").click(function(){
+                if(!$("#userName").val()){
+                    alert("您输入的用户名不正确，请重新输入");
+                    return;
+                }
+                // if(!regular.pwd.test($("#userPwd").val())){
+                if(!$("#userPwd").val()){
+                    alert("您输入的密码格式不正确，请请重新输入");
+                    return;
+                }
+                //获取请求对象，与使用md5加密密码
+                let obj ={
+                    userName:$("#userName").val(),
+                    // userPassWord:hex_md5($("#userPwd").val())
+                    userPassWord:$("#userPwd").val()
+                }
+                $.ajax({
+                    type:"post",
+                    url:serviceUrl+urlFace.userRegister,
+                    data:obj,
+                    success:function(res){
+                        console.log(res);
+                    },
+                    error:function(err){
+                        console.log("请求失败");
+                    }
+                })
+            })
+        })
+    </script>
+</html>
