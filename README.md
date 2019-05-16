@@ -7,10 +7,16 @@
 # 环境
 * Node：10.15.3<br>
 * MySQL：8.0.12<br>
-* 微信小程序：1.02.1812271<br>
+* 微信小程序：1.02<br>
 
 # 运行
-  一、数据库
-  将dataBase文件下的litem添加到MySQL数据库中
-  二、后台
-  下载Service文件之后，
+### 一、数据库<br>
+  将dataBase文件下的litem添加到MySQL数据库中<br>
+### 二、后台
+  下载Service文件<br>
+  npm install --save<br>
+  <br>
+  进入Service/bin文件夹<br>
+  <br>
+  node www.js
+### 三、小程序<br>
