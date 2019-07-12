@@ -14,11 +14,11 @@
   将dataBase文件下的litem添加到MySQL数据库中<br>
 ### 二、后台
   下载Service文件<br><br>
-  npm install --save<br>
+  npm install<br>
   <br>
   进入Service/bin文件夹<br>
   <br>
-  node www.js
+  运行 node www.js
 ### 三、小程序<br>
   在微信开发者工具中导入项目：lagou<br><br>
   直接运行就可以了
